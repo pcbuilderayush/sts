@@ -116,6 +116,22 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public Employee(@NotEmpty(message = "First name can not be empty") @NotNull(message = "First name can not be omiteed") String firstName,
+			@NotEmpty(message = "last name can not be empty") @NotNull(message = "last name can not be omiteed") String lastName,
+			@Min(value = 25000, message = "basic can not be less than 25 thousand") @Max(value = 150000, message = "basic can not be more than 4.5 lakh") double basic,
+			LocalDate joinDate, Department dept,
+			@Pattern(regexp = "[1-9][0-9]{9}", message = "Mobile number should be of 10 digits") @NotNull(message = "Mobile Number Cant be omitted") String mobileNumber,
+			@Email(message = "email must be valid") @NotNull(message = "Email cant be omiteed") String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.basic = basic;
+		this.joinDate = joinDate;
+		this.dept = dept;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+	}
 	
 	
 	
